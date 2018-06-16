@@ -1,97 +1,144 @@
-// create array with question data 
-$(document).ready(function () {
-    let myQuestions = [
-        {
-            question: 'Which country won the 2014 FIFA World Cup?',
-            choices: ['Brazil', 'Germany', 'Spain', 'Netherlands'],
-            answer: 'Germany',
-        }, {
-            question: 'Which nation has won the most world cups?',
-            choices: ['Germany', 'Itay', 'France', 'Brazil'],
-            answer: 'Brazil',
-        }, {
-            question: 'Who has scored the most world cup goals?',
-            choices: ['Miroslav klose', 'Ronaldo', 'Ronaldinho', 'Landon Donovan'],
-            answer: 'Miroslav Klose',
-        }
-    ];
+// global variables 
+let leftBlank = 0;
+let timeLeft = 5;
 
-    let userPick;
-    let rightAnswer = 0;
-    let wrongAnswer = 0;
-    let leftBlank = 0;
-    let question = 0;
-    let count = 15;
+// start button game 
+$(document).ready(function () {
 
     $('#start').on('click', function () {
-        $(this).hide();
-        counter = setInterval(timer, 1000);
-        displayGame();
-
-    })
-
-    function timer() {
-        count--;
-        if (count <= 0) {
-            clearInterval(counter);
-            return;
-        }
-        $('#timer').html('Time remaining: ' + count + ' secs');
-    }
-
-    function displayGame() {
-        $('#question').html(myQuestions[0].question);
-        question++;
-
-        let choicesArr = myQuestions[0].choices;
-        // let buttonArr = [];
-
-        for (let i = 0; i < choicesArr.length; i++) {
-            let answerList = $('<div>');
-            answerList.addClass('answerbutton');
-            answerList.text(choicesArr[i]);
-            // answerList.attr('data-id', i);
-            $('#answer').append(answerList);
-        }
-
-    }
-
-    $('.answerbutton').on('click',function() {
-        // userPick = $(this).data('id');
-        // myQuestions[0].answer;
-        console.log('test');
-        if (userPick != myQuestions[0].answer) {
-            $('#answer').text('NO! NO! NO! That/s Wrong!');
-            wrongAnswer++;
-
-        } else if (userPick === myQuestions[0].answer) {
-            $('#answer').text('Nice Work!');
-            rightAnswer++;
-        }
+        $('#quiz').show();
+        $('#start').hide();
+        timer();
     });
 });
 
+// function to check answers 
+function checkAnswers(){
+    let question1 = document.quiz.question1.value;
+    let question2 = document.quiz.question2.value;
+    let question3 = document.quiz.question3.value;
+    let question4 = document.quiz.question4.value;
+    let question5 = document.quiz.question5.value;
+    let question6 = document.quiz.question6.value;
+    let question7 = document.quiz.question7.value;
+    let question8 = document.quiz.question8.value;
+    let question9 = document.quiz.question9.value;
+    let question10 = document.quiz.question10.value;
+    
+    let correct = 0;
+    let wrong = 0;
 
-// start button and restart game button 
+                if (question1 === "Germany"){
+                    correct++;
+            }   else if (question1 === ''){
+                    leftBlank++;
+            }   else {
+                    wrong++;
+            }
+                if (question2 === 'Miroslav Klose'){
+                    correct++;
+            }    else if(question2 === '') {
+                    leftBlank++;
+            }   else {
+                    wrong++;
+            }
 
-// game functions 
+                if (question3 === 'Uruguay'){
+                    correct++;
+            }  else if (question3 === ''){
+                    leftBlank++;
+            }   else {
+                    wrong++;
+            }
+
+            if (question4 === 'Mexico'){
+                    correct++;
+            }   else if(question4 === ''){
+                    leftBlank++;
+            }   else {
+                    wrong++;
+            }
+
+            if (question5 === 'Ronaldo'){
+                    correct++;
+            }   else if (question5 === ''){
+                    leftBlank++;
+            }   else {
+                    wrong++;
+            }
+
+            if (question6 === 'Netherlands'){
+                correct++;
+            }   else if (question6 === ''){
+                leftBlank++;
+            }   else {
+                wrong++;
+            }
+
+            if (question7 === 'Faryd Mondragon'){
+                correct++;
+            }   else if (question7 === ''){
+                leftBlank++;
+            }   else {
+                wrong++;
+            }
+
+            if (question8 === 'Russia'){
+                correct++;
+            }   else if (question8 === ''){
+                leftBlank++;
+            }   else {
+                wrong++;
+            }
+
+            if (question9 === 'Brazil'){
+                correct++;
+            }   else if (question9 === ''){
+                leftBlank++;
+            }   else {
+                wrong++;
+            }
+
+            if (question10 === 'Iceland'){
+                correct++;
+            }   else if (question10 === ''){
+                leftBlank++;
+            }   else {
+                wrong++;
+            }
+
+    $('#quiz').hide();
+    $('#correct').show();
+    $('#correct').html('Number Correct: ' + correct);
+    $('#wrong').html('Number Incorrect: ' + wrong);
+    $('#unanswered').html('Left Blank: ' + leftBlank);
+    $('#timer').hide();
+    $('#button').hide();
+    $('h1').hide();
+    $('h2').show();
+}
+// timer functions 
+function timer() {
+    $('#timer').html('Time Remaining: ' + timeLeft);
+    intervalId = setInterval(countDown, 1000);
+}
+// countdown function
+function countDown() {
+    timeLeft--;
+    $('#timer').html('Time Remaining: ' + timeLeft);
+    if (timeLeft === 0) {
+        clearInterval(intervalId);
+        $('#timer').empty();
+        checkAnswers();
+    }
+}
+// clear interval
+function stopTimer(){
+    clearInterval(intervalId);
+}
 
 
-// next question function 
 
-
-	//sets up new questions & answerList
-
-	//clicking an answer will pause the time and setup answerPage
-
-// timer countdown function 
-
-
-// show time countdown function 
-
-
-// answerpage function that tracks right, wrong and not answered counters 
-// display results function 
 
 
 
