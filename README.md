@@ -1,7 +1,7 @@
 # Trivia-Game
 
-The Project 
-  The 2018 FIFA World Cup is underway! With that, I decided to make a simple trivia game. The quiz is like any other quiz, except I am testing your knowledge of World Cup History. 
+ 
+The 2018 FIFA World Cup is underway! With that, I decided to make a simple trivia game. The quiz is like any other quiz, except I am testing your knowledge of World Cup History. 
   I tried the throw in some curve balls! Good luck! 
   
 If you like soccer, hopefully you'll enjoy this quiz. You can check out the quiz by click on the below link! 
