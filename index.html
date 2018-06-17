@@ -4,93 +4,109 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>World Cup Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 
 </head>
 
 <body>
+    <div class="title">
+        <h1>World Cup Trivia</h1>
+    </div>
 
-    <h1>Let's Test Your World Cup Knowledge</h1>
     <h2>Your Results</h2>
 
-    <button id="start">start game now</button>
+    <div class="start">
+        <button id="start">start game now</button>
+    </div>
     
     <div id="timer"></div>
 
     <form id="quiz" name="quiz">
-        
+            <br>
             <p>1. Which country won the 2014 FIFA World Cup in Brazil?</p>
+            <br>
                 <input type="radio" id="mc" name="question1" value="Germany">Germany<br>
                 <input type="radio" id="mc" name="question1" value="England">England<br>
                 <input type="radio" id="mc" name="question1" value="Brazil">Brazil<br>
                 <input type="radio" id="mc" name="question1" value="Argentina">Argentina<br>
-        
+            <br>
             <p>2. Which player has scored the most goals at the World Cup?</p>
+            <br>
                 <input type="radio" id="mc" name="question2" value="Ronaldo">Ronaldo<br>
                 <input type="radio" id="mc" name="question2" value="Lionel Messi">Lionel Messi<br>
                 <input type="radio" id="mc" name="question2" value="Miroslav Klose">Miroslav Klose<br>
                 <input type="radio" id="mc" name="question2" value="Raul">Raul<br>
-    
+            <br>
             <p>3. Which nation won the first ever World Cup?</p>
+            <br>
                 <input type="radio" id="mc" name="question3" value="Brazil">Brazil<br>
                 <input type="radio" id="mc" name="question3" value="Mexico">Mexico<br>
                 <input type="radio" id="mc" name="question3" value="Uruguay">Uruguay<br>
                 <input type="radio" id="mc" name="question3" value="Italy">Italy<br>
-  
+            <br>
             <p>4. Which country has failed to advance from the round of 16 since the 2002 World Cup?</p>
+            <br>
                 <input type="radio" id="mc" name="question4" value="Ghana">Ghana<br>
                 <input type="radio" id="mc" name="question4" value="Mexico">Mexico<br>
                 <input type="radio" id="mc" name="question4" value="Belgium">Belgium<br>
                 <input type="radio" id="mc" name="question4" value="Italy">Italy<br>
-
+            <br>
             <p>5. All of the following players have scored in two World Cup Finals except?</p>
+            <br>
                 <input type="radio" id="mc" name="question5" value="Zinedine Zidan">Zinedine Zidan<br>
                 <input type="radio" id="mc" name="question5" value="Pele">Pele<br>
                 <input type="radio" id="mc" name="question5" value="Ronaldo">Ronaldo<br>
                 <input type="radio" id="mc" name="question5" value="Vava">Vava<br>
-
+            <br>
             <p>6. Which country has been dubbed the best nation to never win a World Cup?</p>
+            <br>
                 <input type="radio" id="mc" name="question6" value="Denmark">Denmark<br>
                 <input type="radio" id="mc" name="question6" value="Chile">Chile<br>
                 <input type="radio" id="mc" name="question6" value="Mexico">Mexico<br>
                 <input type="radio" id="mc" name="question6" value="Netherlands">Netherlands<br>
+            <br>
             <p>7. Who is the oldest goalkeeper to ever play in a World Cup?</p>
-
+            <br>
                 <input type="radio" id="mc" name="question7" value="Faryd Mondragon">Faryd Mondragon<br>
                 <input type="radio" id="mc" name="question7" value="Oliver Kahn">Oliver Kahn<br>
                 <input type="radio" id="mc" name="question7" value="Iker Casillas">Iker Casillas<br>
                 <input type="radio" id="mc" name="question7" value="Petr Cech">Petr Cech<br>
-
+            <br>
             <p>8. Which host country has scored the most goals in an opening match?</p>
+            <br>
                 <input type="radio" id="mc" name="question8" value="Russia">Russia<br>
                 <input type="radio" id="mc" name="question8" value="Brazil">Brazil<br>
                 <input type="radio" id="mc" name="question8" value="Senagal">Senegal<br>
                 <input type="radio" id="mc" name="question8" value="Italy">Italy<br>
-
+            <br>
             <p>9. Which country has made an appearance at every World Cup?</p>
+            <br>
                 <input type="radio" id="mc" name="question9" value="Argentina">Argentina<br>
                 <input type="radio" id="mc" name="question9" value="Chile">Chile<br>
                 <input type="radio" id="mc" name="question9" value="Brazil">Brazil<br>
                 <input type="radio" id="mc" name="question9" value="Germany">Germany<br>
-
+            <br>
             <p>10. Which was the smallest nation to qualify for the 2018 FIFA World Cup?</p>
+            <br>
                 <input type="radio" id="mc" name="question10" value="Denmark">Denmark<br>
                 <input type="radio" id="mc" name="question10" value="Iceland">Iceland<br>
                 <input type="radio" id="mc" name="question10" value="Uruguay">Uruguay<br>
                 <input type="radio" id="mc" name="question10" value="Croatia">Croatia<br>
+            <br>
+                <input id ="button" type="button" value="Finished" onclick="checkAnswers();">
+            <br>
+            <br>
     </form>
-    <!-- <button id="submit">Submit</button> -->
-    <input id ="button" type="button" value="Finished" onclick="checkAnswers();">
-
+   
     <div id="results">
         <p id="correct"></p>
         <p id="wrong"></p>
         <p id="unanswered"></p>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./assets/javascript/app.js"></script>

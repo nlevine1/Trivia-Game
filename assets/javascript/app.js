@@ -1,13 +1,16 @@
 // global variables 
-let leftBlank = 0;
-let timeLeft = 5;
 
+let timeLeft = 50;
+let correct = 0;
+let wrong = 0;
+let leftBlank = 0;
 // start button game 
 $(document).ready(function () {
 
     $('#start').on('click', function () {
         $('#quiz').show();
         $('#start').hide();
+        $('#timer').show();
         timer();
     });
 });
@@ -25,9 +28,7 @@ function checkAnswers(){
     let question9 = document.quiz.question9.value;
     let question10 = document.quiz.question10.value;
     
-    let correct = 0;
-    let wrong = 0;
-
+    
                 if (question1 === "Germany"){
                     correct++;
             }   else if (question1 === ''){
@@ -115,7 +116,9 @@ function checkAnswers(){
     $('#timer').hide();
     $('#button').hide();
     $('h1').hide();
+    $('.title').hide();
     $('h2').show();
+    $('#results').show();
 }
 // timer functions 
 function timer() {
@@ -137,6 +140,7 @@ function stopTimer(){
     clearInterval(intervalId);
 }
 
+// reset function 
 
 
 

@@ -1,3 +1,85 @@
-#correct, form, h2 {
+#correct, form, h2, #timer, #results, #reset {
     display: none;
+}
+
+body {
+    background-image: url(../images/world-cup.jpg);
+    background-size: cover; 
+}
+
+.title {
+    height: 150px;
+    background: black;
+    width: 500px;
+    text-align: center;
+    margin: 50px auto;
+    color: whitesmoke;
+    border: 2px solid white;
+}
+
+h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 60px;
+    font-weight: 00;
+    line-height: 70px;
+    margin: 30 auto;
+}
+/* button styles */
+/* ============================= */
+.start {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#start, #button {
+    font-family: 'Bungee', cursive;
+    height: 50px;
+    width: 150px;
+    font-size: 16px;
+    background-color: black;
+    color: whitesmoke;
+    border: 2px solid white;
+}
+
+/* quiz style */
+#quiz {
+    background-color: black; 
+    width: 700px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Bungee', cursive;
+    margin: 0 auto;
+    border: 2px solid white;
+}
+
+/* Timer style */
+#timer {
+    color: whitesmoke;
+    font-family: 'Bungee', cursive;
+    background-color: black;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 50px;
+    border: 2px solid white;
+}
+
+#id {
+    color: whitesmoke;
+    size: 30px;
+}
+
+#results {
+    color: whitesmoke;
+    font-family: 'Bungee', cursive;
+    background-color: black;
+    width: 210px;
+    height: 150px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    border: 2px solid white;
 }
